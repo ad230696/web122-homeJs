@@ -1,16 +1,15 @@
 'use streict'
 
-const firstTitleLetter = text => {
-    let result = '';
-    for (let i = 0; i < text.length; i++) {
-        // current = text[i];
-        if (i === 0 || text[i - 1] == 0) {
-            result += text[i].toUpperCase();
-        } else {
-            result += text[i];
-        }
-    }
-    return result;
-};
+const text = 'hello ilia! how are you?';
+const copitalize = text => (text.length === 0) ? text : `${text[0].toUpperCase()}${text.slice(1)}`;
 
-console.log(firstTitleLetter('hello, world!'));
+firsTitleLater = text => {
+    const splitText = text.split(' ');
+    const result = [];
+    for (const item of splitText) {
+        result.push(copitalize(item))
+    }
+    return result.join(' ');
+}
+
+console.log(firsTitleLater(text));
